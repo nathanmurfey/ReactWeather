@@ -10,24 +10,29 @@ var Weather = React.createClass({
             isLoading: false
         }
     },
-    handleSearch: function (location) {
+    onFormSubmit: function (location) {
         var that = this;
 
         debugger;
-        
+
         this.setState({isLoading: true});
 
-        openWeatherMap.getTemp(location).then(function (temp) {
+        // this is the callback function that allows your to update the temp
+        var cb = function (temp) {
             that.setState({
                 location: location,
                 temp: temp,
                 isLoading: false
             })
-        }, function (errorMessage) {
+        };
+
+        var cb_error = function (errorMessage) {
             that.setState({isLoading:false});
             alert(errorMessage);
-        });
-    },  
+        };
+
+        openWeatherMap.getTemp(location).then(cb, cb_error);
+    },
     render: function () {
         var {isLoading, location, temp} = this.state;
 
@@ -42,10 +47,10 @@ var Weather = React.createClass({
         return(
             <div>
                 <WeatherTitle />
-                <WeatherForm onSearch={this.handleSearch}/>
+                <WeatherForm onSearch={this.onFormSubmit}/>
                 {renderMessage()}
             </div>
-            
+
         );
     }
 });

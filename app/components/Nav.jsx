@@ -11,7 +11,7 @@ var Nav = React.createClass({
             <div className="top-bar">
                 <div className="top-bar-left">
                     <ul className="menu">
-                        <li className="menu-text">React Weather App</li>
+                        <li className="menu-text">Merry Christmas Gurrowa!</li>
                         <li>
                             <IndexLink to="/" activeClassName="active" activeStyle={{fontWeight: 'bold'}}>Get Weather</IndexLink>
                         </li>
@@ -19,8 +19,9 @@ var Nav = React.createClass({
                             <Link to="/about" activeClassName="active" activeStyle={{fontWeight: 'bold'}}>About</Link>
                         </li>
                         <li>
-                            <Link to="/examples" activeClassName="active" activeStyle={{fontWeight: 'bold'}}>Examples</Link>      
+                            <Link to="/examples" activeClassName="active" activeStyle={{fontWeight: 'bold'}}>Examples</Link>
                         </li>
+
                     </ul>
                 </div>
                 <div className="top-bar-right">
@@ -35,10 +36,13 @@ var Nav = React.createClass({
                         </ul>
                     </form>
                 </div>
-            </div> 
+            </div>
         );
     }
 });
 
 module.exports = Nav;
 
+
+//
+//

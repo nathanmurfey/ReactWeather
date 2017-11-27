@@ -3,8 +3,7 @@ var React = require('react');
 var WeatherForm = React.createClass({
     onFormSubmit: function (e) {
         e.preventDefault();
-
-    
+        console.log('button pressed and read');
         var location = this.refs.location.value;
 
         if (location.length > 0) {
@@ -17,7 +16,7 @@ var WeatherForm = React.createClass({
             <div>
                 <form onSubmit={this.onFormSubmit}>
                     <input type="text" ref="location" />
-                    <button>Find Weather</button>
+                    <button className="button expanded success">Submit</button>
                 </form>
             </div>
         );
